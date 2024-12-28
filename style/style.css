@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #f4f4f4;
 }
 button{
     padding: 10px 20px;
@@ -27,22 +28,41 @@ footer {
     color: white;
     text-align: center;
     padding: 10px;
+    p{
+        background-color: #333;
+    }
 }
 /* Página de inicio */
 .nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #f8f9fa;
+    background-color: #ffe600;
     color: white;
     padding: 10px 20px;
     z-index: 1;
     .logo{
+        background-color: #ffe600;
         font-size: 1.5rem;
         font-weight: bold;
         color: black;
     }
+    li{
+        list-style: none;
+        display: inline;
+        margin-right: 10px;
+    }
+    a{
+        color: black;
+        background-color: #ffe600;
+        border: none;
+        padding: 10px;
+    }
+    a:hover{
+        color: gray;
+    }
     .nav-list{
+        background-color: #ffe600;
         display: flex;
         list-style: none;
         gap: 10px;
@@ -101,8 +121,33 @@ footer {
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
     gap: 20px;
+    .product{
+        background-color: #f8f9fa;
+        border-radius: 10px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        img{
+            width: 200px;
+            height: 150px;
+           object-fit: contain;
+           background: transparent;
+        }
+        button{
+            padding: 10px 20px;
+            background-color: #ffe600;
+            color: black;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: #f7e547;
+        }
+    }
     .product-title{
-        font-size: 1.5rem;
+        font-size: 1rem;
         margin-bottom: 20px;
         padding-left: 6px;
     }
@@ -160,4 +205,60 @@ footer {
 
 .formulario button:hover {
     background-color: #45a049;
+}
+/* Tabla de productos */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px;
+    padding: 20px;
+    .thead{
+        padding: 20px;
+        margin: 10px;
+    }
+    .thead th{
+        background-color: #333;
+        color: white;
+        padding: 10px;
+    }
+    tr{
+        background-color: #f8f9fa;
+    }
+    td{
+        padding: 10px;
+        border: 1px solid #ccc;
+    }
+    button{
+        padding: 10px 20px;
+        background-color: #ffe600;
+        color: black;
+        border: none;
+        cursor: pointer;
+        align-items: center;
+        justify-items: center;
+    }
+    button:hover{
+        background-color: #f7e547;
+    }
+}
+.cantidad{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.buttonEliminar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#btnComprar{
+    background-color: #333;
+    width: 50%;
+    color: white;
+    padding: 10px;
+    margin: 30px;
+    border: none;
+    cursor: pointer;
 }
