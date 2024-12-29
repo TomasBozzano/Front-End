@@ -15,30 +15,41 @@
             <li><a href="../index.html">Inicio</a></li>
             <li><a href="productos.html">Productos</a></li>
             <li><a href="contacto.html">Contacto</a></li>
-            <li><a href="carrito.html"><i class="fa-light fa-cart-shopping"></i></a></li>
+            <li><a href="carrito.html">
+                    <img src="../svg/card.svg" alt="Carrito de compras" class="cart">
+                    <p id="cartCounter">0</p>
+                </a></li>
         </ul>
     </nav>
     <main class="cont">
-        <div class="background-image"></div>
         <div class="content">
             <h2>Contacto</h2>
-            <form class="formulario">
-                <label for="name">Nombre</label>
-                <input type="text" id="name" name="name" required>
+            <form id="formularioContacto" class="formulario" method="POST">
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name" name="name" placeholder="Ingresa tu nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo Electrónico</label>
+                    <input type="email" id="email" name="email" placeholder="Ingresa tu correo" required>
+                </div>
 
-                <label for="email">Correo Electrónico</label>
-                <input type="email" id="email" name="email" required>
+                <div class="form-group">
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" name="message" placeholder="Escribe tu mensaje aquí..."
+                        required></textarea>
+                </div>
 
-                <label for="message">Mensaje</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-
-                <button name="form-button" type="submit">Enviar</button>
+                <button class="form-button" type="submit">Enviar</button>
             </form>
         </div>
+
     </main>
     <footer class="footer">
         <p>Talento - Tech 2024 || Bozzano, Tomás</p>
     </footer>
+    <script src="../Js/counterCart.js"></script>
+    <script src="../Js/contacto.js"></script>
 </body>
 
 </html>
