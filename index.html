@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
 
     <!-- Meta Descripción -->
-    <meta name="description" content="PaseoCompras es tu tienda en línea para encontrar una variedad de productos increíbles a precios económicos. ¡Descubre nuestras ofertas y compra ahora!">
+    <meta name="description"
+        content="PaseoCompras es tu tienda en línea para encontrar una variedad de productos increíbles a precios económicos. ¡Descubre nuestras ofertas y compra ahora!">
 
     <!-- Meta Keywords -->
     <meta name="keywords" content="e-commerce, tienda en línea, compras, productos, ofertas, precios económicos">
@@ -16,14 +18,16 @@
 
     <!-- Meta Open Graph para redes sociales -->
     <meta property="og:title" content="E-commerce - PaseoCompras">
-    <meta property="og:description" content="PaseoCompras es tu tienda en línea para encontrar una variedad de productos increíbles a precios económicos. ¡Descubre nuestras ofertas y compra ahora!">
+    <meta property="og:description"
+        content="PaseoCompras es tu tienda en línea para encontrar una variedad de productos increíbles a precios económicos. ¡Descubre nuestras ofertas y compra ahora!">
     <meta property="og:image" content="/svg/portada.jpg">
     <meta property="og:type" content="website">
 
     <!-- Meta Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="E-commerce - PaseoCompras">
-    <meta name="twitter:description" content="PaseoCompras es tu tienda en línea para encontrar una variedad de productos increíbles a precios económicos. ¡Descubre nuestras ofertas y compra ahora!">
+    <meta name="twitter:description"
+        content="PaseoCompras es tu tienda en línea para encontrar una variedad de productos increíbles a precios económicos. ¡Descubre nuestras ofertas y compra ahora!">
     <meta name="twitter:image" content="/svg/portada.jpg">
 
     <!-- Robots -->
@@ -32,22 +36,36 @@
     <link rel="icon" href="./svg/shopping.ico" type="image/x-icon">
     <title>E-commerce</title>
 </head>
+
 <body>
     <nav class="nav">
-        <p class="logo">pre-entrega TT2024</p>
+        <p class="logo">TT2024</p>
         <ul class="nav-list">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="./pages/productos.html">Productos</a></li>
             <li><a href="./pages/contacto.html">Contacto</a></li>
             <li><a href="pages/carrito.html">
+                    <img src="./svg/card.svg" alt="Carrito de compras" class="cart">
+                    <p id="cartCounter"></p>
+                </a></li>
+        </ul>
+        <button id="menu" class="nav-list-mobile"><img src="./svg/menu.svg" alt="Menu desplegable"
+                class="menuDesplegable"></button>
+    </nav>
+    <nav class="nav">
+        <ul class="nav-list-mobile-content" id="mobile">
+            <a href="index.html">Inicio</a>
+            <a href="./pages/productos.html">Productos</a>
+            <a href="./pages/contacto.html">Contacto</a>
+            <a href="pages/carrito.html">
                 <img src="./svg/card.svg" alt="Carrito de compras" class="cart">
-                <p id="cartCounter">0</p>
-            </a></li>
+                <p id="cart-quantity"></p>
+            </a>
         </ul>
     </nav>
     <main class="cont">
         <h1>Bienvenidos a "PaseoCompras"</h1>
-        <p>Aquí puedes encontrar una variedad de productos increibles, aun precio economico.</p>
+        <p>Aquí puedes encontrar una variedad de productos increibles, a un precio economico.</p>
         <h2>¿Que esperas para comprar?</h2>
         <img src="./svg/portada.jpg" alt="Imagen de compras en línea" class="portada">
     </main>
@@ -55,5 +73,7 @@
         <p>Talento - Tech 2024 || Bozzano, Tomás</p>
     </footer>
     <script src="./Js/counterCart.js"></script>
+    <script src="./Js/menu.js"></script>
 </body>
+
 </html>
