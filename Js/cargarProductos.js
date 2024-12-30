@@ -2,26 +2,34 @@
 document.addEventListener('DOMContentLoaded', products);
 
 function products() {
-    fetch('https://fakestoreapi.com/products')
-        .then(response => response.json())
-        .then(data => {
-            const tableProducts = document.getElementById('products');
-            /*agregar la clase star a la img star.svg */
-            let productsHTML = '';
-            data.forEach(product => {
-                productsHTML += `
-                    <div class="product">
-                        <img src="${product.image}" alt="${product.title}">
-                        <h3 class="product-title">${product.title}</h3>
-                        <p class="product-rating">${product.rating.rate} 
-                            <img src="../svg/star.svg" alt="rating" class="star">
-                        </p>
-                        <p class="product-price">$${product.price}</p>
-                        <button onclick="addProduct(${product.id})" class="product-button">Agregar al carrito</button>
-                    </div>`;
+    const spinner = document.getElementById('spinner');
+    spinner.style.display = 'block';
+    try{
+        fetch('https://fakestoreapi.com/products')
+            .then(response => response.json())
+            .then(data => {
+                const tableProducts = document.getElementById('products');
+                /*agregar la clase star a la img star.svg */
+                let productsHTML = '';
+                data.forEach(product => {
+                    productsHTML += `
+                        <div class="product">
+                            <img src="${product.image}" alt="${product.title}">
+                            <h3 class="product-title">${product.title}</h3>
+                            <p class="product-rating">${product.rating.rate} 
+                                <img src="../svg/star.svg" alt="rating" class="star">
+                            </p>
+                            <p class="product-price">$${product.price}</p>
+                            <button onclick="addProduct(${product.id})" class="product-button">Agregar al carrito</button>
+                        </div>`;
+                });
+                tableProducts.innerHTML = productsHTML;
             });
-            tableProducts.innerHTML = productsHTML;
-        });
+    }catch(error){
+        console.log('Error al cargar los productos', error);
+    }finally{
+        spinner.style.display = 'none';
+    }
 }
 
 /* le llega por parametro el ID que es el producto */
