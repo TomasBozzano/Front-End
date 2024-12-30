@@ -59,8 +59,6 @@ footer {
     li {
         background-color: #ffe600;
         flex-direction: row;
-        display: inline;
-        margin-right: 10px;
     }
 
     a {
@@ -93,6 +91,12 @@ footer {
             margin-right: 10px;
         }
     }
+    .nav-list-mobile{
+        display: none;
+    }
+    .nav-list-mobile-content{
+        display: none;
+    }
 }
 
 .cont {
@@ -111,7 +115,7 @@ footer {
     }
 
     p {
-        font-size: 1.2rem;
+        font-size: 1rem;
         margin-bottom: 20px;
     }
 
@@ -486,9 +490,232 @@ span{
     align-items: center;
     gap: 10px;
 }
+/* Spinner de loader*/
+.contendor-spinner {
+    /* opacidad al fondo de la pantalla*/
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: none;
+    position: absolute; /* Establece la posición relativa para el contenedor del spinner */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+.spinner {
+    border: 4px solid rgba(0, 0, 0, .1);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border-left-color: black;
+    animation: spin 1s ease infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
 
 /* mediaQuery para tabla y resumen*/
 @media (max-width: 768px) {
+    .cont{
+        width: 100%;
+        height: 100vh;
+        padding: 20px;
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 30px auto;
+        h1{
+            font-size: 1.5rem;
+            text-align: center;
+            display: block;
+            p{
+                font-size: 1rem;
+                align-items: center;
+                justify-content: center;
+            }
+            h2{
+                font-size: 1.2rem;
+                text-align: center;
+            }
+        }
+    }
+    .portada{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px;
+        margin: 30px auto;
+        background-color: #f4f4f4;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        width: 500px;
+        height: 300px;
+    }
+    .products{
+        width: 80%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+    .contenedorCarrito {
+        flex-direction: column;
+    }
+    .table{
+        width: 100%;
+    }
+    .productImage{
+        background-color: transparent;
+        width: 80px;
+        height: 80px;
+    }
+    .resumen {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+/* Media query para mobile*/
+@media (max-width: 650px) {
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #ffe600;
+        color: white;
+        padding: 10px 20px;
+        z-index: 1;
+
+        .logo {
+            background-color: #ffe600;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: black;
+        }
+
+        li {
+            background-color: #ffe600;
+            flex-direction: row;
+        }
+
+        a {
+            color: black;
+            background-color: #ffe600;
+            display: flex;
+            border: none;
+            padding: 10px;
+        }
+
+        a:hover {
+            color: gray;
+        }
+
+        p {
+            background-color: #ffe600;
+            margin-right: 10px;
+        }
+
+        .nav-list {
+            background-color: #ffe600;
+            display: none;
+            align-items: center;
+            flex-direction: row;
+            list-style: none;
+            gap: 10px;
+            padding: 10px;
+
+            .nav-item {
+                margin-right: 10px;
+            }
+        }
+
+        .nav-list-mobile{
+            background-color: #ffe600;
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+            list-style: none;
+            gap: 10px;
+            padding: 10px;
+            button{
+                background-color: transparent;
+                border: none;
+                color: black;
+            }
+            img{
+                background-color: transparent;
+                width: 40px;
+                height: 40px;
+            }
+            .menuDesplegable{
+                background-color: transparent;
+            }
+            .nav-list-mobile-content{
+                display: none;
+                flex-direction: column;
+                gap: 10px;
+                padding: 10px;
+                border-radius: 10px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                li{
+                    background-color: #ffe600;
+                    flex-direction: row;
+                    display: inline;
+                    margin-right: 10px;
+                    a{
+                        background-color: #ffe600;
+                        color: black;
+                    }
+                }
+
+            }
+        }
+        .show {
+            display: block;
+        }
+    }
+    h1{
+        font-size: 1.5rem;
+        text-align: center;
+        display: block;
+        p{
+            font-size: 1rem;
+            text-align: center;
+        }
+        h2{
+            font-size: 1.2rem;
+            text-align: center;
+        }
+    }
+    .portada{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px;
+        margin: 30px auto;
+        background-color: #f4f4f4;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        height: 200px;
+    }
+    .footer{
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        p{
+            background-color: #333;
+        }
+    }
     .contenedorCarrito {
         flex-direction: column;
     }
